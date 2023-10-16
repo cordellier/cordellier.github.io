@@ -1,0 +1,207 @@
+@use './../../themes/variables' as v;
+
+@mixin mobile {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 1024px) and (max-width: 2400px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 2401px) {
+    @content;
+  }
+}
+
+main {
+  .location-city {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: v.$background_footer;
+    height: 50px;
+    background-color: v.$background_city;
+
+    .fa-solid.fa-location-dot {
+      margin-right: 10px;
+    }
+  }
+
+  .explore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+    padding: 45px 0px;
+    background-color: v.$background_grey;
+    text-align: center;
+
+    .explore-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      @include tablet {
+        font-size: 2.5rem;
+      }
+    }
+
+    .explore-txt {
+      margin: 20px;
+      font-size: 1.125rem;
+      margin-bottom: 40px;
+      color: v.$background_footer;
+      font-weight: 300;
+    }
+  }
+
+  .operation {
+    padding: 25px 25px 25px 25px;
+
+    @include tablet {
+      padding: 25px 90px 25px 90px;
+    }
+
+    .operation-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .operation-steps {
+        margin-top: 20px;
+
+        .operation-step {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .operation-number {
+            border-radius: 50%;
+            padding: 0 5px;
+            padding: 5px 8px 5px 8px;
+            color: v.$white;
+            background-color: v.$purple;
+            text-align: center;
+            position: absolute;
+            transform: translateX(-50%);
+            transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+          }
+
+          .operation-detail {
+            display: flex;
+            flex-direction: row;
+            border-radius: 15px;
+            background: v.$background_grey;
+            width: 345px;
+            height: 65px;
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
+            align-items: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+
+            i {
+              color: #7E7E7E;
+              padding: 0 30px;
+            }
+
+            p {
+              font-weight: bold;
+            }
+          }
+
+          .operation-detail:hover {
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+            background-color: v.$purple_light;
+            cursor: pointer;
+
+            i {
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .restaurants {
+    background: v.$lien_footer;
+    padding: 25px 25px 25px 25px;
+
+    @include tablet {
+      padding: 12.5px 90px 12.5px 90px;
+    }
+
+    .restaurant-cards {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      display: grid;
+      gap: 50px 100px;
+      margin-top: 28px;
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 100px;
+      }
+
+      .restaurant-tag {
+        align-items: center;
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        position: relative;
+
+        .restaurant-tag-img img {
+          border-radius: 20px 20px 0 0;
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        .restaurant-tag-img>img {
+          object-fit: cover;
+          border-radius: 20px 20px 0 0;
+        }
+
+        .new {
+          color: v.$green;
+          font-weight: bold;
+          background-color: v.$green_light;
+          position: absolute;
+          padding: 10px 20px;
+          margin-left: -140px;
+          margin-top: 22px;
+        }
+      }
+
+      .restaurant-block {
+        display: flex;
+        justify-content: space-between;
+        gap: 4px;
+        border-radius: 0 0 20px 20px;
+        background: #FFF;
+        padding: 5px;
+        box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+
+        .restaurant-block-infos {
+          margin: 5px 10px;
+          color: v.$black;
+
+          .h3-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+        }
+
+        .like {
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+}

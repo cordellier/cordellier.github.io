@@ -1,0 +1,17 @@
+header {
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+        margin: 30px;
+
+        .header-logo {
+            font-size: 2rem;
+            font-family: $logo_font;
+            color: $black;
+        }
+    }
+}

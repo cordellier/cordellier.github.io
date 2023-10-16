@@ -1,0 +1,67 @@
+@import '../themes/variables';
+
+// Source du code : https://codepen.io/GeorgeWL/pen/yLeGGMw
+
+.heart-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.heart-clip {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient($purple, $color-secondary);
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 0.2s linear, opacity 0.2s linear;
+        transform-origin: center 60%;
+    }
+}
+
+.heart-stroke {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.heart-home {
+    margin-right: 1rem;
+}
+
+.heart-path1 {
+    clip-path: url(#svgPath1);
+}
+
+.heart-path2 {
+    clip-path: url(#svgPath2);
+}
+
+.heart-path3 {
+    clip-path: url(#svgPath3);
+}
+
+.heart-path4 {
+    clip-path: url(#svgPath4);
+}
+
+.heart-menu {
+    clip-path: url(#svgPathMenu);
+}
