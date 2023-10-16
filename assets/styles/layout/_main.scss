@@ -9,11 +9,16 @@
 @mixin tablet {
   @media (min-width: 1024px) and (max-width: 2400px) {
     @content;
+
+    .operation-steps {
+      display: flex;
+      gap: 50px;
+    }
   }
 }
 
 @mixin desktop {
-  @media (min-width: 2401px) {
+  @media (min-width: 1440px) {
     @content;
   }
 }
@@ -69,138 +74,133 @@ main {
     }
 
     .operation-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
 
-      .operation-steps {
+      .operation-step {
         margin-top: 20px;
+        display: flex;
+        align-items: center;
+        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+        border-radius: 20px;
+        width: 100%;
+        height: 65px;
+        
+        &:hover {
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+          background-color: v.$purple_light;
+          cursor: pointer;
+  
+          i {
+            color: $purple;
+          }
+        }
+        .operation-number {
+          border-radius: 50%;
+          padding: 0 5px;
+          padding: 5px 8px 5px 8px;
+          color: v.$white;
+          background-color: v.$purple;
+          text-align: center;
+          position: absolute;
+          transform: translateX(-50%);
+          transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
 
-        .operation-step {
+        .operation-detail {
           display: flex;
           flex-direction: row;
+          border-radius: 15px;
           align-items: center;
+          transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 
-          .operation-number {
-            border-radius: 50%;
-            padding: 0 5px;
-            padding: 5px 8px 5px 8px;
-            color: v.$white;
-            background-color: v.$purple;
-            text-align: center;
-            position: absolute;
-            transform: translateX(-50%);
-            transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+          i {
+            color: #7E7E7E;
+            padding: 0 30px;
           }
 
-          .operation-detail {
-            display: flex;
-            flex-direction: row;
-            border-radius: 15px;
-            background: v.$background_grey;
-            width: 345px;
-            height: 65px;
-            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
-            align-items: center;
-            transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-
-            i {
-              color: #7E7E7E;
-              padding: 0 30px;
-            }
-
-            p {
-              font-weight: bold;
-            }
-          }
-
-          .operation-detail:hover {
-            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-            background-color: v.$purple_light;
-            cursor: pointer;
-
-            i {
-              color: $purple;
-            }
+          p {
+            font-weight: bold;
           }
         }
       }
+
     }
   }
+}
 
-  .restaurants {
-    background: v.$lien_footer;
-    padding: 25px 25px 25px 25px;
+
+.restaurants {
+  background: v.$lien_footer;
+  padding: 25px 25px 25px 25px;
+
+  @include tablet {
+    padding: 12.5px 90px 12.5px 90px;
+  }
+
+  .restaurant-cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: grid;
+    gap: 50px 100px;
+    margin-top: 28px;
 
     @include tablet {
-      padding: 12.5px 90px 12.5px 90px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px 100px;
     }
 
-    .restaurant-cards {
+    .restaurant-tag {
+      align-items: center;
+      border-radius: 1rem;
+      box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+      position: relative;
+
+      .restaurant-tag-img img {
+        border-radius: 20px 20px 0 0;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .restaurant-tag-img>img {
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .new {
+        color: v.$green;
+        font-weight: bold;
+        background-color: v.$green_light;
+        position: absolute;
+        padding: 10px 20px;
+        margin-left: -140px;
+        margin-top: 22px;
+      }
+    }
+
+    .restaurant-block {
       display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      display: grid;
-      gap: 50px 100px;
-      margin-top: 28px;
+      justify-content: space-between;
+      gap: 4px;
+      border-radius: 0 0 20px 20px;
+      background: #FFF;
+      padding: 5px;
+      box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+      margin-top: -5px;
 
-      @include tablet {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px 100px;
-      }
+      .restaurant-block-infos {
+        margin: 5px 10px;
+        color: v.$black;
 
-      .restaurant-tag {
-        align-items: center;
-        border-radius: 1rem;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        position: relative;
-
-        .restaurant-tag-img img {
-          border-radius: 20px 20px 0 0;
-          height: 200px;
-          width: 100%;
-          object-fit: cover;
-        }
-
-        .restaurant-tag-img>img {
-          object-fit: cover;
-          border-radius: 20px 20px 0 0;
-        }
-
-        .new {
-          color: v.$green;
-          font-weight: bold;
-          background-color: v.$green_light;
-          position: absolute;
-          padding: 10px 20px;
-          margin-left: -140px;
-          margin-top: 22px;
+        .h3-title {
+          font-weight: 700;
+          margin-bottom: 5px;
         }
       }
 
-      .restaurant-block {
-        display: flex;
-        justify-content: space-between;
-        gap: 4px;
-        border-radius: 0 0 20px 20px;
-        background: #FFF;
-        padding: 5px;
-        box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
-
-        .restaurant-block-infos {
-          margin: 5px 10px;
-          color: v.$black;
-
-          .h3-title {
-            font-weight: 700;
-            margin-bottom: 5px;
-          }
-        }
-
-        .like {
-          margin-top: -15px;
-        }
+      .like {
+        margin-top: -15px;
       }
     }
   }

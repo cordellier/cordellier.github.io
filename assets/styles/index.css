@@ -243,6 +243,12 @@ main .explore .explore-title {
   main .explore .explore-title {
     font-size: 2.5rem;
   }
+  main .explore .explore-title .operation-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+  }
 }
 main .explore .explore-txt {
   margin: 20px;
@@ -258,33 +264,40 @@ main .operation {
   main .operation {
     padding: 25px 90px 25px 90px;
   }
+  main .operation .operation-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+  }
 }
 main .operation .operation-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: grid;
 }
-main .operation .operation-container .operation-steps {
+main .operation .operation-container .operation-step {
   margin-top: 20px;
-}
-main .operation .operation-container .operation-steps .operation-step {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  width: 100%;
+  height: 65px;
 }
-main .operation .operation-container .operation-steps .operation-step .operation-number {
+main .operation .operation-container .operation-step:hover {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background-color: #e3d7f1;
+  cursor: pointer;
+}
+main .operation .operation-container .operation-step:hover i {
+  color: #9356DC;
+}
+main .operation .operation-container .operation-step .operation-number {
   border-radius: 50%;
   padding: 0 5px;
   padding: 5px 8px 5px 8px;
@@ -299,7 +312,7 @@ main .operation .operation-container .operation-steps .operation-step .operation
   transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease, -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease;
 }
-main .operation .operation-container .operation-steps .operation-step .operation-detail {
+main .operation .operation-container .operation-step .operation-detail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,11 +321,6 @@ main .operation .operation-container .operation-steps .operation-step .operation
       -ms-flex-direction: row;
           flex-direction: row;
   border-radius: 15px;
-  background: #F6F6F6;
-  width: 345px;
-  height: 65px;
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -321,32 +329,30 @@ main .operation .operation-container .operation-steps .operation-step .operation
   transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   transition: box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease, -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease;
 }
-main .operation .operation-container .operation-steps .operation-step .operation-detail i {
+main .operation .operation-container .operation-step .operation-detail i {
   color: #7E7E7E;
   padding: 0 30px;
 }
-main .operation .operation-container .operation-steps .operation-step .operation-detail p {
+main .operation .operation-container .operation-step .operation-detail p {
   font-weight: bold;
 }
-main .operation .operation-container .operation-steps .operation-step .operation-detail:hover {
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  background-color: #e3d7f1;
-  cursor: pointer;
-}
-main .operation .operation-container .operation-steps .operation-step .operation-detail:hover i {
-  color: #9356DC;
-}
-main .restaurants {
+
+.restaurants {
   background: #FFF;
   padding: 25px 25px 25px 25px;
 }
 @media (min-width: 1024px) and (max-width: 2400px) {
-  main .restaurants {
+  .restaurants {
     padding: 12.5px 90px 12.5px 90px;
   }
+  .restaurants .operation-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+  }
 }
-main .restaurants .restaurant-cards {
+.restaurants .restaurant-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,34 +367,39 @@ main .restaurants .restaurant-cards {
   margin-top: 28px;
 }
 @media (min-width: 1024px) and (max-width: 2400px) {
-  main .restaurants .restaurant-cards {
+  .restaurants .restaurant-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 50px 100px;
   }
+  .restaurants .restaurant-cards .operation-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+  }
 }
-main .restaurants .restaurant-cards .restaurant-tag {
+.restaurants .restaurant-cards .restaurant-tag {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1rem;
-  background-color: white;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0) 0px 5px 15px;
   position: relative;
 }
-main .restaurants .restaurant-cards .restaurant-tag .restaurant-tag-img img {
+.restaurants .restaurant-cards .restaurant-tag .restaurant-tag-img img {
   border-radius: 20px 20px 0 0;
   height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .restaurants .restaurant-cards .restaurant-tag .restaurant-tag-img > img {
+.restaurants .restaurant-cards .restaurant-tag .restaurant-tag-img > img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
-main .restaurants .restaurant-cards .restaurant-tag .new {
+.restaurants .restaurant-cards .restaurant-tag .new {
   color: #008766;
   font-weight: bold;
   background-color: #99E2D0;
@@ -397,7 +408,7 @@ main .restaurants .restaurant-cards .restaurant-tag .new {
   margin-left: -140px;
   margin-top: 22px;
 }
-main .restaurants .restaurant-cards .restaurant-block {
+.restaurants .restaurant-cards .restaurant-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,21 +421,23 @@ main .restaurants .restaurant-cards .restaurant-block {
   padding: 5px;
   -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  margin-top: -5px;
 }
-main .restaurants .restaurant-cards .restaurant-block .restaurant-block-infos {
+.restaurants .restaurant-cards .restaurant-block .restaurant-block-infos {
   margin: 5px 10px;
   color: black;
 }
-main .restaurants .restaurant-cards .restaurant-block .restaurant-block-infos .h3-title {
+.restaurants .restaurant-cards .restaurant-block .restaurant-block-infos .h3-title {
   font-weight: 700;
   margin-bottom: 5px;
 }
-main .restaurants .restaurant-cards .restaurant-block .like {
+.restaurants .restaurant-cards .restaurant-block .like {
   margin-top: -15px;
 }
 
 footer {
   background-color: #353535;
+  font-family: roboto, sans-serif;
 }
 footer .footer-block {
   display: -webkit-box;
