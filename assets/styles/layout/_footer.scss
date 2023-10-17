@@ -19,7 +19,7 @@ footer {
             display: flex;
             flex-direction: row;
             margin-left: 25px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
 
             // ! 1024px < width < 1439px ;
             @media (min-width: 1024px) and (max-width:2400px) {

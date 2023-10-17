@@ -90,8 +90,8 @@ main {
           background-color: v.$purple_light;
           cursor: pointer;
   
-          i {
-            color: $purple;
+          .fa-solid {
+            color: v.$purple;
           }
         }
         .operation-number {

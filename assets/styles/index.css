@@ -294,7 +294,7 @@ main .operation .operation-container .operation-step:hover {
   background-color: #e3d7f1;
   cursor: pointer;
 }
-main .operation .operation-container .operation-step:hover i {
+main .operation .operation-container .operation-step:hover .fa-solid {
   color: #9356DC;
 }
 main .operation .operation-container .operation-step .operation-number {
@@ -473,7 +473,7 @@ footer .footer-block .footer-block-link {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-left: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 @media (min-width: 1024px) and (max-width: 2400px) {
   footer .footer-block .footer-block-link {
@@ -910,7 +910,7 @@ h2 {
   }
   .explore_button {
     margin: 0 auto;
-    width: 30%;
+    width: 40%;
     margin-bottom: 30px;
   }
 }
