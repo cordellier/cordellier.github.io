@@ -657,37 +657,41 @@ h2 {
           animation: appearArticle 0.5s forwards;
 }
 
-.choice:nth-child(1) .article:nth-child(1) {
+.choice:nth-child(1) .article:nth-child(1),
+.choice:nth-child(2) .article:nth-child(1),
+.choice:nth-child(3) .article:nth-child(1) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-.choice:nth-child(1) .article:nth-child(2) {
+.choice:nth-child(1) .article:nth-child(2),
+.choice:nth-child(2) .article:nth-child(2),
+.choice:nth-child(3) .article:nth-child(2) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.choice:nth-child(1) .article:nth-child(3) {
+.choice:nth-child(1) .article:nth-child(3),
+.choice:nth-child(2) .article:nth-child(3),
+.choice:nth-child(3) .article:nth-child(3) {
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
 }
 
-.choice:nth-child(1) .article:nth-child(4) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-
-.choice:nth-child(2) .article:nth-child(1) {
+.choice:nth-child(2) .article:nth-child(1),
+.choice:nth-child(3) .article:nth-child(1) {
   -webkit-animation-delay: 3.5s;
           animation-delay: 3.5s;
 }
 
-.choice:nth-child(2) .article:nth-child(2) {
+.choice:nth-child(2) .article:nth-child(2),
+.choice:nth-child(3) .article:nth-child(2) {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
 }
 
-.choice:nth-child(2) .article:nth-child(3) {
+.choice:nth-child(2) .article:nth-child(3),
+.choice:nth-child(3) .article:nth-child(3) {
   -webkit-animation-delay: 4.5s;
           animation-delay: 4.5s;
 }
