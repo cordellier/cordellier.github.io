@@ -1,28 +1,5 @@
 @use './../../themes/variables' as v;
 
-@mixin mobile {
-  @media (max-width: 1023px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 1024px) and (max-width: 2400px) {
-    @content;
-
-    .operation-steps {
-      display: flex;
-      gap: 50px;
-    }
-  }
-}
-
-@mixin desktop {
-  @media (min-width: 1440px) {
-    @content;
-  }
-}
-
 main {
   .location-city {
     display: flex;

@@ -6,8 +6,7 @@ footer {
         display: flex;
         flex-direction: column;
 
-        // ! 1024px < width < 1439px ;
-        @media (min-width: 1024px) and (max-width:2400px) {
+        @media (min-width: 1024px) {
             display: flex;
             flex-direction: row-reverse;
             padding: 30px 25px;
@@ -21,8 +20,7 @@ footer {
             margin-left: 25px;
             margin-bottom: 8px;
 
-            // ! 1024px < width < 1439px ;
-            @media (min-width: 1024px) and (max-width:2400px) {
+            @media (min-width: 1024px) {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -51,8 +49,7 @@ footer {
             font-size: 1.125rem;
             padding: 22px 0px 16px 25px;
 
-            // ! 1024px < width < 1439px ;
-            @media (min-width: 1024px) and (max-width:2400px) {
+            @media (min-width: 1024px) {
                 padding: 0px 25px 0px 150px;
             }
         }
